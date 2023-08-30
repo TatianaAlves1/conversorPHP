@@ -10,18 +10,21 @@
 <body>
     <?php
         require 'vendor/autoload.php';
+        use Composer\BuscadorHttp\Conversor;
+        // use Symfony\Component\DomCrawler\Crawler;
 
-        $client = new GuzzleHttp\Client();
-        $resposta = $client->request('GET','http://economia.awesomeapi.com.br/json/last/USD-BRL');
-        echo "<br>-----<br>";
-        echo $resposta->getStatusCode();
-        echo "<br>-----<br>";
-        $dados = json_decode($resposta->getBody());
-        var_dump($dados);
-        echo $dados->USDBRL->bid;
+        // $client = new GuzzleHttp\Client();
+        // $resposta = $client->request('GET','http://economia.awesomeapi.com.br/json/last/USD-BRL');
+        // echo "<br>-----<br>";
+        // echo $resposta->getStatusCode();
+        // echo "<br>-----<br>";
+        // $dados = json_decode($resposta->getBody());
+        // var_dump($dados);
+        // echo $dados->USDBRL->bid;
         
         
-        
+        $x = new Conversor;
+        $x->verificarAcesso();
         
 
     ?>
